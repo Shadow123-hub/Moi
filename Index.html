@@ -1,0 +1,121 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Questionnaire</title>
+  <style>
+    body {
+      background: #f0f4f8;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+      min-height: 100vh;
+    }
+
+    .container {
+      background: black;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+      text-align: center;
+      width: 90%;
+      max-width: 500px;
+      color: white;
+    }
+
+    input {
+      padding: 10px;
+      margin: 10px 0;
+      width: 90%;
+      border-radius: 5px;
+      border: none;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+      background-color: #4CAF50;
+      color: white;
+      cursor: pointer;
+    }
+
+    #result {
+      margin-top: 20px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Répondez aux questions ci-dessous</h2>
+
+    <form id="quizForm">
+      <div>
+        <label for="question1">1. Quelle est la capitale du Cameroun ?</label><br><input type="text" id="question1" placeholder="Répondez ici" required>
+      </div>
+
+      <div>
+        <label for="question2">2. Quelle est ma nourriture preferer ?</label><br>
+        <input type="text" id="question2" placeholder="Répondez ici" required>
+      </div>
+
+      <div>
+        <label for="question3">3. j'aime quoi' ?</label><br>
+        <input type="text" id="question3" placeholder="Répondez ici" required>
+      </div>
+            <div>
+        <label for="question4">4.le meilleur joueur du monde ?</label><br>
+        <input type="text" id="question4" placeholder="Répondez ici" required>
+      </div>
+            <div>
+        <label for="question5">5. le prof peux me donner le codz de son wifi ?</label><br>
+        <input type="text" id="question5" placeholder="Répondez ici" required>
+      </div>
+
+      <button type="submit">Envoyer vos réponses</button>
+    </form>
+    <p id="result"></p>
+  </div>
+
+  <script>
+    document.getElementById('quizForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      
+      let q1 = document.getElementById('question1').value.trim().toLowerCase();
+      let q2 = document.getElementById('question2').value.trim().toLowerCase();
+      let q3 = document.getElementById('question3').value.trim().toLowerCase();
+      let q4 = document.getElementById('question4').value.trim().toLowerCase();
+      let q5 = document.getElementById('question5').value.trim().toLowerCase();
+
+      
+      let correctAnswers = {
+        question1: "yaoundé",
+        question2: "l'okok"
+        question3: "tuer"
+        question4: "neymar"
+        question5: ''oui"
+      };
+
+      
+      let score = 0;
+      const:5
+      if (q1 === correctAnswers.question1) score++;
+      if (q2 === correctAnswers.question2) score++;
+      if (q3 === correctAnswers.question3) score++;
+      if (q4 === correctAnswers.question4) score++;
+      if (q5 === correctAnswers.question5) score++;
+      
+       const ratees = total - score;
+
+      document.getElementById('result').innerText =
+        `✅ Bonnes réponses : score /{total} | ❌ Mauvaises réponses : ${ratees}`;
+    });
+</script>
+</body>
+</html>
